@@ -12,7 +12,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Brand</a>
+        <a class="navbar-brand" href="/">Logo</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,7 +21,8 @@
           <li><a href="#">Dashboad</a></li>
           <li><a href="#">Employer list</a></li>
           <li><a href="#">Student List</a></li>
-          <li><a href="#">Log in</a></li>
+          <li><%= link_to "Sign up", new_model_registration_path %></li>
+          <li><%= link_to "Log in",  new_model_session_path %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
