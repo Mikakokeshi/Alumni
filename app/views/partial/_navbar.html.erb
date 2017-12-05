@@ -1,3 +1,13 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="js/script.js"></script>
+ <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+     <script>
+       $('.dropdown-toggle').dropdown()
+      </script>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -13,11 +23,27 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Dashboad</a></li>
-        <li><a href="#">Employer list</a></li>
-        <li><a href="#">Student List</a></li>
-        <li><%= link_to "Sign up", new_model_registration_path %></li>
-        <li><%= link_to "Log in",  new_model_session_path %></li>
+
+        <% if (!model_signed_in?) %>
+          <li><a href="#">Dashboad</a></li>
+          <li><a href="#">Employer list</a></li>
+          <li><a href="#">Student List</a></li>
+          <li><%= link_to "Sign up", new_model_registration_path %></li>
+          <li><%= link_to "Log in",  new_model_session_path %></li>
+        <% else %>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <%= current_model.email %>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", model_path(current_model) %></li>
+                <li><%= link_to "Edit profile", edit_model_registration_path(current_model) %></li>
+                <li><%= link_to "Log out",  destroy_model_session_path, method: :delete %></li>
+              </ul>
+          </li>
+
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

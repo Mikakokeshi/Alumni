@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "toastr";
 
 
 .jumbotron {
@@ -18,7 +19,7 @@
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #F2F2F2;
+    color: #F0f0f0;
     font-size: 13px;
 }
 
@@ -28,4 +29,9 @@
 
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #F2F2F2;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: transparent;
+    color: #555;
 }
