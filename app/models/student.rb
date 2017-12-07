@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-  blongs_to :model
+  belongs_to :model
 
   validates :name, presence: true
   validates :nationality, presence: true

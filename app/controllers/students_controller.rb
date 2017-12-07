@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
   end
 
   def new
+    @student = current_model.students.build
   end
 
   def create
