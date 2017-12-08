@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206051612) do
+ActiveRecord::Schema.define(version: 20171208035231) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string "company_name"
+    t.string "industry"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_companies_on_student_id"
+  end
 
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,10 +45,10 @@ ActiveRecord::Schema.define(version: 20171206051612) do
     t.string "gender"
     t.string "enlollment_date"
     t.string "work_place"
-    t.string "work_industry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "model_id"
+    t.string "occupation"
     t.index ["model_id"], name: "index_students_on_model_id"
   end
 
