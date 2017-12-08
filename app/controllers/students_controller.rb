@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
   def index
+    @students = Student.all.order(created_at: :desc)
   end
+
 
   def show
   end
@@ -13,7 +15,7 @@ class StudentsController < ApplicationController
     @student = current_model.students.build(student_params)
 
      if @student.save
-       redirect_to edit_student_path(@student), notice: "created and saved sucusessfully"
+       redirect_to students_path, notice: "created and saved sucusessfully"
      else
        redirect_to new_student_path, notice: "failed"
      end
