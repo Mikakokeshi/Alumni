@@ -5,7 +5,9 @@ class StudentsController < ApplicationController
 
 
   def show
-  end
+    @student = Student.find_by(id: params[:id])
+    @model = @student.model
+    end
 
   def new
     @student = current_model.students.build

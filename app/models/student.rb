@@ -1,5 +1,4 @@
 class Student < ApplicationRecord
-  has_many :company
   belongs_to :model
 
 

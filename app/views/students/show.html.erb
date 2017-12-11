@@ -1,2 +1,38 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+
+
+<%= render "partial/navbar" %>
+
+<h3 class="col-md-6 col-md-offset-3 text-center">Sutudent list</h3>
+
+<div class="container text-center">
+  <div class="row text-center" >
+    <div class="col-md-6 col-md-offset-3 text-center">
+        <article>
+
+
+          <div class="col-md-6 col-md-offset-3 text-center">
+             <div class="row">
+               <section>
+          <h2> <%= @student.name %></h2>
+        <h5> Vivixx Academy | <%= @student.enlollment_date %> ~ <br>
+           | <%= @student.gender %>
+           | <%= @student.nationality %> <br>
+           <%= @student.work_place %>
+           <%= @student.occupation%>
+        </h5>
+
+        <div class="student-menus">
+          <%= link_to("Edit", "/students/#{@student.id}/edit") %>
+          <%= link_to("Delet", "/students/#{@student.id}/destroy", {method: "student"}) %>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+
+
+      </article>
+    </div>
+  </div>
+</div>

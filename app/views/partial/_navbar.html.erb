@@ -30,13 +30,14 @@
         <% else %>
         <li><a href="#">Dashboad</a></li>
         <li><a href="#">Employer list</a></li>
-        <li><a href="#">Student List</a></li>
+        <li><a href="/students">Student List</a></li>
+        <li><a href="/companies">Company List</a></li>
         <li><%= link_to "Add Students", new_student_path %></li>
+        <li><%= link_to "Add Companies", new_company_path %></li>
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <%= current_model.email %>
-              <span class="caret"></span></a>
+            <%= current_model.email %> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Profile", model_path(current_model) %></li>
                 <li><%= link_to "Edit profile", edit_model_registration_path(current_model) %></li>

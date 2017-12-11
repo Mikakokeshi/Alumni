@@ -3,45 +3,32 @@
 
 
 
-<h3>Sutudent list</h3>
+<h3 class="col-md-6 col-md-offset-3 text-center">Sutudent list</h3>
 <% @students.each do |student| %>
-    <div class="container">
-  	<div class="row">
-  		<div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
-  		    <article>
-  		        <div class="row">
-  		            <div class="col-sm-6 col-md-4">
-                    <figure>
-                      <img src="http://usbcode.ir/wp-content/uploads/2017/03/bootstrap.jpg">
-                    </figure>
-                   </div>
 
-                   <div class="col-sm-6 col-md-8">
-                     <div class="row">
-                     <h3> <%= link_to(student.name, "/students/#{student.id}")%> </h3>
-                      <p> Vivixx Academy | <%= link_to(student.enlollment_date, "/students/#{student.id}")%> ~
-                       | <%= link_to(student.gender, "/students/#{student.id}")%>
-                       | <%= link_to(student.nationality, "/students/#{student.id}")%> <br>
-                        Working in <%= link_to(student.work_place, "/students/#{student.id}")%>
-                       as <%= link_to(student.occupation, "/students/#{student.id}")%>
-                     </p>
+<div class="container text-center">
+  <div class="row text-center" >
+    <div class="col-md-6 col-md-offset-3 text-center">
+        <article>
+
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                       <div class="row">
+                         <section>
+                             <h3 > <%= link_to(student.name, "/students/#{student.id}")%> </h3>
+                             <p> Vivixx Academy | <%= link_to(student.enlollment_date, "/students/#{student.id}")%> ~
+                                | <%= link_to(student.gender, "/students/#{student.id}")%><br>
+                                  <%= link_to(student.nationality, "/students/#{student.id}")%>
+                                Working in <%= link_to(student.work_place, "/students/#{student.id}")%>
+                                as <%= link_to(student.occupation, "/students/#{student.id}")%>
+                             </p>
+                        </section>
+                       </div>
                      </div>
-
-                   <section>
-
-              <div class="col-md-12 select">
-              </div>
-              <div class="col-md-12 select">
-              </div>
-
-
-            </section>
-            		            </div>
-            		        </div>
-            		    </article>
-        </div>
+                     
+		     </article>
+       </div>
       </div>
     </div>
 
 
-    <% end %>
+<% end %>
