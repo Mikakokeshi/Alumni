@@ -4,6 +4,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    @company = Company.find_by(id: params[:id])
   end
 
   def new
@@ -21,10 +22,23 @@ class CompaniesController < ApplicationController
   end
 
   def edit
+        @company = Company.find(params[:id])
   end
 
-  def update
-  end
+
+    def update
+      @company = Company.find(params[:id])
+      @company.update(company_params)
+      redirect_to company_path
+    end
+
+    def destroy
+      @company = Company.find_by(id: params[:id])
+      @company.destroy
+      flash[:notice] = "Deleted"
+      redirect_to companies_path
+    end
+
 
     private
     def company_params

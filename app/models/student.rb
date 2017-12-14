@@ -1,7 +1,4 @@
 class Student < ApplicationRecord
-  belongs_to :model
-
-
   validates :name, presence: true
   validates :nationality, presence: true
   validates :gender, presence: true

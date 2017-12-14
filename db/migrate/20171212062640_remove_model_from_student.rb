@@ -1,4 +1,4 @@
-class RemoveModelFromStudents < ActiveRecord::Migration[5.1]
+class RemoveModelFromStudent < ActiveRecord::Migration[5.1]
   def change
     remove_reference :students, :model, foreign_key: true
   end

@@ -6,29 +6,19 @@
 <h3 class="col-md-6 col-md-offset-3 text-center">Sutudent list</h3>
 <% @students.each do |student| %>
 
-<div class="container text-center">
-  <div class="row text-center" >
-    <div class="col-md-6 col-md-offset-3 text-center">
-        <article>
+<div class="col-md-6 col-md-offset-3 text-center">
+  <div class="row">
 
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                       <div class="row">
-                         <section>
-                             <h3 > <%= link_to(student.name, "/students/#{student.id}")%> </h3>
-                             <p> Vivixx Academy | <%= link_to(student.enlollment_date, "/students/#{student.id}")%> ~
-                                | <%= link_to(student.gender, "/students/#{student.id}")%><br>
-                                  <%= link_to(student.nationality, "/students/#{student.id}")%>
-                                Working in <%= link_to(student.work_place, "/students/#{student.id}")%>
-                                as <%= link_to(student.occupation, "/students/#{student.id}")%>
-                             </p>
-                        </section>
-                       </div>
-                     </div>
-                     
-		     </article>
-       </div>
-      </div>
-    </div>
+    <h3 > <%= link_to(student.name, "/students/#{student.id}")%> </h3>
+    <p> Vivixx Academy | <%= link_to(student.enlollment_date, "/students/#{student.id}")%> ~
+    | <%= link_to(student.gender, "/students/#{student.id}")%><br>
+    <%= link_to(student.nationality, "/students/#{student.id}")%>
+    Working in <%= link_to(student.work_place, "/students/#{student.id}")%>
+    as <%= link_to(student.occupation, "/students/#{student.id}")%>
+    </p>
+
+  </div>
+</div>
 
 
 <% end %>

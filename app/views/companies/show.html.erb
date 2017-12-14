@@ -1,2 +1,17 @@
-<h1>Companies#show</h1>
-<p>Find me in app/views/companies/show.html.erb</p>
+
+
+<%= render "partial/navbar" %>
+
+<h3 class="col-md-6 col-md-offset-3 text-center">Company list</h3>
+    <div class="col-md-6 col-md-offset-3 text-center">
+                    <div class="row">
+                     <section>
+                         <h4> <%= @company.company_name %></h4>
+                         <h5> Vivixx Academy | <%= @company.industry %>industry</h5>
+                        <div class="company-menus">
+                          <%= link_to("Edit", "/companies/#{@company.id}/edit") %>
+                          <%= link_to("Delete", "/companies/#{@company.id}/destroy", {method: "post" }) %>
+                        </div>
+                      </section>
+                  </div>
+                </div>

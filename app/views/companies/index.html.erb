@@ -4,26 +4,16 @@
 
 
 <h3 class="col-md-6 col-md-offset-3 text-center">Company list</h3>
+<br>
 <% @companies.each do |company| %>
-
-<div class="container text-center">
-  <div class="row text-center" >
-    <div class="col-md-6 col-md-offset-3 text-center">
-      <article>
 
           <div class="col-md-6 col-md-offset-3 text-center">
              <div class="row">
                <section>
-                   <h3><%= link_to(company.company_name, "/companies/#{company.id}") %></h3>
-                  <h4> <%= link_to(company.industry, "/companies/#{company.id}") %> industry</h4>
+                   <h4><%= link_to(company.company_name, "/companies/#{company.id}") %></h4>
+                  <h5> <%= link_to(company.industry, "/companies/#{company.id}") %> industry</h5>
                  </section>
              </div>
            </div>
-
-		     </article>
-       </div>
-      </div>
-    </div>
-
 
 <% end %>

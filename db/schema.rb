@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211032032) do
+ActiveRecord::Schema.define(version: 20171214065045) do
 
   create_table "companies", force: :cascade do |t|
     t.string "company_name"
     t.string "industry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
+    t.index ["student_id"], name: "index_companies_on_student_id"
   end
 
   create_table "models", force: :cascade do |t|
@@ -45,9 +47,10 @@ ActiveRecord::Schema.define(version: 20171211032032) do
     t.string "work_place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "model_id"
     t.string "occupation"
-    t.index ["model_id"], name: "index_students_on_model_id"
+    t.integer "company_id"
+    t.string "image_name"
+    t.index ["company_id"], name: "index_students_on_company_id"
   end
 
 end
